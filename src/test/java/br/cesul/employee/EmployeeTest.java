@@ -66,4 +66,24 @@ public class EmployeeTest {
 
         assertEquals(3628.63, employee.calculateIncome());
     }
+
+    @Test
+    @DisplayName("testCalculateGetDiscount4")
+    void testCalculateGetDiscount4() {
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        var employee = new Employee(
+                "João",
+                "12345",
+                "6789",
+                LocalDate.parse("20/04/1982", dtf),
+                Sex.MALE,
+                5000D,
+                "555",
+                "666");
+
+        assertEquals(3944.3599999999997, employee.calculateIncome());
+    }
+
+
 }

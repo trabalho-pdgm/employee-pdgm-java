@@ -30,4 +30,23 @@ public class ShareHolderTest {
 
         assertEquals(5000, shareholder.calculateIncome(), 0.01);
     }
+
+    @Test
+    @DisplayName("Calculates the rendiment of shareholder 2")
+    void testCalculateRendimentShareHolder2() throws InvalidParticipationException {
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        var shareholder = new ShareHolder(
+                "Marcos",
+                "12345",
+                "6789",
+                LocalDate.parse("20/04/1982", dtf),
+                Sex.MALE,
+                60D,
+                333333.33);
+
+
+        assertEquals(19999.9998, shareholder.calculateIncome(), 0.01);
+    }
 }
